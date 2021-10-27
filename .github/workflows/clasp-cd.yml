@@ -33,7 +33,7 @@ jobs:
           echo \{\"token\":\{\"access_token\":\"${{ secrets.ACCESS_TOKEN }}\",\"scope\":\"https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/drive.metadata.readonly https://www.googleapis.com/auth/script.projects https://www.googleapis.com/auth/script.webapp.deploy https://www.googleapis.com/auth/logging.read openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/script.deployments https://www.googleapis.com/auth/service.management https://www.googleapis.com/auth/cloud-platform\",\"token_type\":\"Bearer\",\"id_token\":\"${{ secrets.ID_TOKEN }}\",\"expiry_date\":1620870307822,\"refresh_token\":\"${{ secrets.REFRESH_TOKEN }}\"\},\"oauth2ClientSettings\":\{\"clientId\":\"${{ secrets.CLIENTID }}\",\"clientSecret\":\"${{ secrets.CLIENTSECRET }}\",\"redirectUri\":\"http://localhost\"\},\"isLocalCreds\":false\} > ~/.clasprc.json
       - name: Create secret.js
         run: |
-          cat secret.js | sed -e "s|\?SLACK_URL|${{ secrets.SLACK_URL }}|g" -e "s|\?CALENDAR_ID|${{ secrets.CALENDAR_ID }}|g" > tmp && mv tmp secret.js
+          cat secret.js | sed -e "s|\?SLACK_URL|${{ secrets.SLACK_URL }}|g" -e "s|\?DRIVE_ID|${{ secrets.DRIVE_DIR_ID }}|g" > tmp && mv tmp secret.js
       - name: Deploy
         run: |
           cp ./node_modules/@sgs-turbo23/ix.js.datetime_extension/dist/datetimeUtil.js .
