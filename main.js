@@ -10,7 +10,7 @@ function main() {
       saveAttachment(yesterday, mailList);
     }
   } catch (error) {
-    postToSlack(`エラーが発生しました。\n${error}`);
+    slack.postToSlack(`エラーが発生しました。\n${error}`);
   }
 }
 
@@ -35,5 +35,5 @@ function saveAttachment(date, messages) {
       }
     }
   }
-  postToSlack(`<@ma.iw>Gmailの添付ファイルをGoogle Driveに保存しました\n${folder.getUrl()}`);
+  slack.postToSlack(`<@ma.iw>Gmailの添付ファイルをGoogle Driveに保存しました\n${folder.getUrl()}`);
 }
