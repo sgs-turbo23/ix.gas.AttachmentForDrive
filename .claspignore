@@ -2,5 +2,5 @@
 !slackNotifier.js
 !datetimeUtil.js
 !appsscript.json
-!entryPoint.js
+!main.js
 !secret.js
