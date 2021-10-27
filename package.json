@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@sgs-turbo23/ix.js.datetime_extension": "^1.0.3",
+    "@sgs-turbo23/ix.js.slack_notifier": "^1.0.1"
+  }
+}
