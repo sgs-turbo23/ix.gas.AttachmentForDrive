@@ -34,8 +34,10 @@ jobs:
       - name: Create secret.js
         run: |
           cat secret.js | sed -e "s|\?SLACK_URL|${{ secrets.SLACK_URL }}|g" -e "s|\?DRIVE_ID|${{ secrets.DRIVE_DIR_ID }}|g" > tmp && mv tmp secret.js
-      - name: ls
-        run: ls
+      - name: pwd
+        run: pwd
       - name: Deploy
         run: |
+          cp ./node_modules/@sgs-turbo23/ix.js.datetime_extension/dist/datetimeUtil.js .
+          cp ./node_modules/@sgs-turbo23/ix.js.slack_notifier/dist/slackNotifier.js .
           clasp push
