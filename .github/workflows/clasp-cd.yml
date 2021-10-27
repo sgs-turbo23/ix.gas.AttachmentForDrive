@@ -38,6 +38,4 @@ jobs:
         run: ls
       - name: Deploy
         run: |
-          cp ./node_modules/@sgs-turbo23/ix.js.datetime_extension/dist/datetimeUtil.js .
-          cp ./node_modules/@sgs-turbo23/ix.js.slack_notifier/dist/slackNotifier.js .
           clasp push
